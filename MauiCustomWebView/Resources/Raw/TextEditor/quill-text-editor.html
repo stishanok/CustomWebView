@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style>
+        /* quill_style */
+
+        body {
+            margin: 0;
+        }
+
+        #editor {
+            z-index: 1;
+            padding-top: 40px;
+            border: 0;
+        }
+
+        .ql-toolbar {
+            position: fixed;
+            top: 0;
+            height: 40px;
+            width: 100%;
+            z-index: 2;
+            background: white;
+        }
+
+        .ql-editor {
+            overflow-x: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class='container'>
+    <div id="editor"></div>
+</div>
+
+<script>
+    /* quill_script */
+</script>
+
+<script>
+    const quill = new Quill("#editor",
+        {
+            modules: {
+                toolbar: {
+                    container: [
+                        "bold",
+                        "italic",
+                        "underline",
+                        {"background": []},
+                        {"list": "bullet"},
+                        {"list": "ordered"},
+                        "clean"
+                    ]
+                }
+            },
+            placeholder: '',
+            theme: "snow",
+            formats: [
+                'align',
+                'background',
+                'bold',
+                'clean',
+                'color',
+                'direction',
+                'formula',
+                'italic',
+                'link',
+                'list',
+                'script',
+                'strike',
+                'underline']
+        });
+
+    quill.root.setAttribute('spellcheck', true);
+</script>
+</body>
+</html>
